@@ -104,16 +104,16 @@ function InventoryTracker:GetSafeId()
 	end
 end
 
+local ItemRegistry = {
+	Items = {}
+}
+
 function ItemRegistry:Add(name)
 	if type(name) == "string" then
 		table.insert(self.Items, name)
 		insertWord(name)
 	end
 end
-
-local ItemRegistry = {
-	Items = {}
-}
 
 function ItemRegistry:Spawn(name, amount)
 	local qty = amount or 0
